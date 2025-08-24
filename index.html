@@ -3,9 +3,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mi amorcito del alma</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80') no-repeat center center fixed;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .birthday-message {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 2rem 3rem;
+            border-radius: 20px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.2);
+            max-width: 600px;
+            text-align: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            z-index: 2;
+        }
+        .birthday-message h1 {
+            margin-bottom: 1rem;
+            color: #2e4a2c;
+        }
+        .birthday-message p {
+            color: #3d3d3d;
+            font-size: 1.2rem;
+        }
+        .love-popup {
+            position: absolute;
+            background: rgba(255,255,255,0.7);
+            color: #2e4a2c;
+            padding: 0.7rem 1.2rem;
+            border-radius: 15px;
+            font-size: 1rem;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            pointer-events: none;
+            opacity: 0.85;
+            animation: floatY 6s infinite alternate;
+        }
+        @keyframes floatY {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-40px); }
+            100% { transform: translateY(0px); }
+        }
+    </style>
 </head>
 <body>
-    
+    <script>
+        // Frases de amor
+        const frases = [
+            "Eres mi razón de sonreír cada día.",
+            "Contigo todo es mejor.",
+            "Te amo más de lo que puedo decir.",
+            "Eres mi sueño hecho realidad.",
+            "Gracias por existir en mi vida.",
+            "Tu sonrisa ilumina mi mundo.",
+            "Siempre pienso en ti.",
+            "Eres mi alegría.",
+            "Te quiero infinito.",
+            "Eres mi paz.",
+            "Mi corazón es tuyo.",
+            "Eres mi mejor regalo.",
+            "No hay nadie como tú.",
+            "Siempre juntos.",
+            "Eres mi inspiración.",
+            "Te extraño cuando no estás.",
+            "Eres mi sol.",
+            "Te admiro mucho.",
+            "Eres mi todo.",
+            "Siempre te elijo.",
+            "Eres mi destino.",
+            "Te amo cada día más.",
+            "Eres mi aventura favorita.",
+            "Eres mi hogar.",
+            "Eres mi universo.",
+            "Eres mi mejor amigo.",
+            "Eres mi confidente.",
+            "Eres mi fuerza.",
+            "Eres mi ternura.",
+            "Eres mi alegría diaria.",
+            "Eres mi razón de vivir.",
+            "Eres mi esperanza.",
+            "Eres mi sueño.",
+            "Eres mi canción.",
+            "Eres mi luz.",
+            "Eres mi vida.",
+            "Eres mi amor eterno.",
+            "Eres mi magia.",
+            "Eres mi razón de luchar.",
+            "Eres mi mejor historia.",
+            "Eres mi dulce locura.",
+            "Eres mi refugio.",
+            "Eres mi mejor momento.",
+            "Eres mi felicidad.",
+            "Eres mi tesoro.",
+            "Eres mi pasión.",
+            "Eres mi calma.",
+            "Eres mi alegría.",
+            "Eres mi mejor día.",
+            "Eres mi sueño cumplido.",
+            "Eres mi razón de ser.",
+            "Eres mi mejor elección.",
+            "Eres mi mejor sorpresa.",
+            "Eres mi mejor futuro.",
+            "Eres mi mejor presente.",
+            "Eres mi mejor pasado.",
+            "Eres mi mejor deseo.",
+            "Eres mi mejor abrazo.",
+            "Eres mi mejor beso.",
+            "Eres mi mejor sonrisa.",
+            "Eres mi mejor mirada.",
+            "Eres mi mejor caricia.",
+            "Eres mi mejor pensamiento.",
+            "Eres mi mejor palabra.",
+            "Eres mi mejor poema.",
+            "Eres mi mejor canción.",
+            "Eres mi mejor sueño.",
+            "Eres mi mejor historia.",
+            "Eres mi mejor aventura.",
+            "Eres mi mejor viaje.",
+            "Eres mi mejor destino.",
+            "Eres mi mejor razón.",
+            "Eres mi mejor esperanza.",
+            "Eres mi mejor alegría.",
+            "Eres mi mejor amor.",
+            "Eres mi mejor vida.",
+            "Eres mi mejor magia.",
+            "Eres mi mejor luz.",
+            "Eres mi mejor paz.",
+            "Eres mi mejor fuerza.",
+            "Eres mi mejor ternura.",
+            "Eres mi mejor refugio.",
+            "Eres mi mejor momento.",
+            "Eres mi mejor día.",
+            "Eres mi mejor tesoro.",
+            "Eres mi mejor pasión.",
+            "Eres mi mejor calma.",
+            "Eres mi mejor sonrisa.",
+            "Eres mi mejor abrazo.",
+            "Eres mi mejor beso.",
+            "Eres mi mejor caricia.",
+            "Eres mi mejor pensamiento.",
+            "Eres mi mejor palabra.",
+            "Eres mi mejor poema.",
+            "Eres mi mejor canción."
+        ];
+        // Generar 100 popups
+        for(let i=0; i<100; i++) {
+            const div = document.createElement('div');
+            div.className = 'love-popup';
+            div.textContent = frases[i % frases.length];
+            // Posición aleatoria
+            div.style.top = `${Math.random()*80+5}%`;
+            div.style.left = `${Math.random()*80+5}%`;
+            // Animación con delay aleatorio
+            div.style.animationDelay = `${Math.random()*6}s`;
+            document.body.appendChild(div);
+        }
+    </script>
+
+    <div class="birthday-message">
+        <h1>¡Feliz cumpleaños Vanessa!</h1>
+        <p>
+            Eres mi amorcito del alma, la persona que llena mi vida de alegría y amor. 
+            En este día tan especial, quiero desearte toda la felicidad del mundo. 
+            Que cada momento de tu vida esté lleno de sonrisas, amor y sueños cumplidos. 
+            Te amo con todo mi corazón y estoy agradecido por cada instante que compartimos juntos.
+            ¡Feliz cumpleaños, mi amor!
+        </p>
+    </div>
 </body>
-</html>
